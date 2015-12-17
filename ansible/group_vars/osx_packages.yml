@@ -33,7 +33,7 @@ osx_packages:
       - zeromq
 
     casks:
-      #- adium
+      #- adium # don't even use it anymore
       - archiver
       - appzapper
       - caffeine
@@ -44,7 +44,7 @@ osx_packages:
       - dropbox
       - evernote
       - firefox
-      #- flashplayer
+      #- flashplayer # perhaps we can live without this bloatware
       - flip4mac
       - forklift
       - github-desktop

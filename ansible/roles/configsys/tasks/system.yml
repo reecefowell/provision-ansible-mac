@@ -3,8 +3,10 @@
   shell: "{{ item }}"
   with_items: 
    - "{{ osx_config_sys.system }}"
+  sudo: true
 
-- name: Sys Config | System
+- name: Sys Config | System SSD Tweaks
   shell: "{{ item }}"
   with_items: 
    - "{{ osx_config_sys.system_ssd_tweaks }}"
+  sudo: true

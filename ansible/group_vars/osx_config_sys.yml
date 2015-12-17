@@ -3,187 +3,252 @@ osx_config_sys:
 
   system:
     # Disable the sound effects on boot
-    - sudo nvram SystemAudioVolume=" "
+    - nvram SystemAudioVolume=" "
+
     # Restart automatically if the computer freezes
-    - sudo systemsetup -setrestartfreeze on
+    - systemsetup -setrestartfreeze on
+
     # Disable automatic termination of inactive apps
     - defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
+
     # Disable the crash reporter
     - defaults write com.apple.CrashReporter DialogType -string "none"
+
     # Set Help Viewer windows to non-floating mode
     - defaults write com.apple.helpviewer DevMode -bool true 
+
     # Save to disk (not to iCloud) by default
     - defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
     # Expand save panel by default
     - defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
     - defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+
     # Expand print panel by default
     - defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
     - defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+
     # Disable window animations ("new window" scale effect)
     #- defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+
     # Disable the “Are you sure you want to open this application?” dialog
     - defaults write com.apple.LaunchServices LSQuarantine -bool false
+
     # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
     - /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+
     # Automatically quit printer app once the print jobs complete
     - defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
     # Disable smart quotes as they’re annoying when typing code
     - defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
     # Disable smart dashes as they’re annoying when typing code
     - defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
     # Increase sound quality for Bluetooth headphones/headsets
     - defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+
     # Save screenshots to the desktop
     - defaults write com.apple.screencapture location -string "${HOME}/Desktop/Screenshots"
+
     # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
     - defaults write com.apple.screencapture type -string "png"
+
     # Disable shadow in screenshots
     - defaults write com.apple.screencapture disable-shadow -bool true
 
   system_ssd_tweaks:
+
     # Disable local Time Machine snapshots
-    - sudo tmutil disablelocal
+    - tmutil disablelocal
+
     # Disable hibernation (speeds up entering sleep mode)
-    - sudo pmset -a hibernatemode 0
+    - pmset -a hibernatemode 0
+
     # Remove the sleep image file to save disk space
-    - sudo rm /private/var/vm/sleepimage
+    - rm /private/var/vm/sleepimage
+
     # Create a zero-byte file instead…
-    - sudo touch /private/var/vm/sleepimage
+    - touch /private/var/vm/sleepimage
+
     # …and make sure it can’t be rewritten
-    - sudo chflags uchg /private/var/vm/sleepimage
+    - chflags uchg /private/var/vm/sleepimage
+
     # Disable the sudden motion sensor as it’s not useful for SSDs
-    - sudo pmset -a sms 0
+    - pmset -a sms 0
 
   system_preferences:
 
     line_1:
 
       general:
+
         # jump to the spot that is clicked
-        # ????
+        - defaults write NSGlobalDomain AppleScrollerPagingBehavior -int 1
+
         # ask to keep changes when closing documents
-        # ????
+        - defaults write NSGlobalDomain NSCloseAlwaysConfirmsChanges -bool true
+
         # set recent items to none
-        # ????
+        - defaults write NSGlobalDomain NSRecentDocumentsLimit 0
+
         # always show scrollbars
         # Possible values: `WhenScrolling`, `Automatic` and `Always`
         - defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+
         # Enable subpixel font rendering on non-Apple LCDs
         - defaults write NSGlobalDomain AppleFontSmoothing -int 2
+
         # Enable HiDPI display modes (requires restart)
-        #- sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
+        #- defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
 
       desktop_screen_saver:
+
         # set screen saver to "Arabesque"
-        # ????
+        - |
+            defaults -currentHost write com.apple.screensaver moduleDict "
+            <dict>
+              <key>moduleName</key><string>Shell</string>
+              <key>path</key><string>/System/Library/Screen Savers/Shell.qtz</string>
+              <key>type</key><integer>1</integer>
+            </dict>
+            "
+
         # show clock with screen saver
-        # ????
+        - defaults -currentHost write com.apple.screensaver showClock -bool true
+
         # show screensaver after 20 mins
-        # ????
+        - defaults -currentHost write com.apple.screensaver idleTime -int 400
+
         # Require password immediately after sleep or screen saver begins
         - defaults write com.apple.screensaver askForPassword -int 1
         - defaults write com.apple.screensaver askForPasswordDelay -int 0
 
       dock:
+
         # Enable highlight hover effect for the grid view of a stack (Dock)
         - defaults write com.apple.dock mouse-over-hilite-stack -bool true
+
         # Set the icon size of Dock items to 36 pixels
         - defaults write com.apple.dock tilesize -int 36
+
         # Change minimize/maximize window effect
         - defaults write com.apple.dock mineffect -string "scale"
+
         # Minimize windows into their application’s icon
         #- defaults write com.apple.dock minimize-to-application -bool true
+
         # Enable spring loading for all Dock items
         #- defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
+
         # Show indicator lights for open applications in the Dock
         - defaults write com.apple.dock show-process-indicators -bool true
+
         # Wipe all (default) app icons from the Dock
         # This is only really useful when setting up a new Mac, or if you don’t use the Dock to launch apps.
         #- defaults write com.apple.dock persistent-apps -array
+
         # Show only open applications in the Dock
         #- defaults write com.apple.dock static-only -bool true
+
         # Don’t animate opening applications from the Dock
         #- defaults write com.apple.dock launchanim -bool false
+
         # Remove the auto-hiding Dock delay
         #- defaults write com.apple.dock autohide-delay -float 0
+
         # Remove the animation when hiding/showing the Dock
         #- defaults write com.apple.dock autohide-time-modifier -float 0
+
         # Automatically hide and show the Dock
         #- defaults write com.apple.dock autohide -bool true
+
         # Make Dock icons of hidden applications translucent
         #- defaults write com.apple.dock showhidden -bool true
+
         # Reset Launchpad, but keep the desktop wallpaper intact
         - find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
 
       mission_control:
+
         # turn off "automatically rearrange spaces based on most recent use"
-        # ????
+        - defaults write com.apple.dock mru-spaces -bool false
+
         # turn on "when switching to an application, switch to a space with open windows for the application"
-        # ????
+        - defaults write com.apple.dock workspaces-auto-swoosh -bool YES
+
         # turn off "displays have separate spaces"
-        # ????
+        - defaults write com.apple.spaces spans-displays -bool FALSE
+
         # turn on "group windows by application"
         # (i.e. use the old Exposé behavior instead)
         - defaults write com.apple.dock expose-group-by-app -bool true
+
         # dashboard as a overlay
         - defaults write com.apple.dashboard enabled-state 3
+
         # Don’t show Dashboard as a Space
         - defaults write com.apple.dock dashboard-in-overlay -bool true
+
         # Speed up Mission Control animations
         - defaults write com.apple.dock expose-animation-duration -float 0.1
+
         # Disable Dashboard
         #- defaults write com.apple.dashboard mcx-disabled -bool true
+
         # Don’t automatically rearrange Spaces based on most recent use
         - defaults write com.apple.dock mru-spaces -bool false
+
         # Disable the Launchpad gesture (pinch with thumb and three fingers)
         #- defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
 
       language_region:
+
         # first day of the week "Monday"
         # ????
+
         # time format, 24 hours
         # ????
 
       security_privacy:
-        # require password 5 seconds after screen saver begins
-        # ????
+
         # disable automatic login
-        # ????
+        - defaults write /Library/Preferences/com.apple.loginwindow DisableFDEAutoLogin -bool YES
+
         # allow apps to be downloaded from anywhere
-        # ????
+        - defaults write /var/db/SystemPolicy-prefs enabled no
+        - spctl --master-disable
+
         # require an administrator password to access system-wide preferences
         # ????
-        # turn on firewall
-        # ????
-        # automaticall allow signed software to receive incoming connections
-        # ????
+
+        # automatically allow signed software to receive incoming connections
+        - defaults write /Library/Preferences/com.apple.alf allowsignedenabled -bool true
+
         # enable stealth mode
-        # ????
+        - defaults write /Library/Preferences/com.apple.alf stealthenabled -bool true
+
+        # turn on firewall
+        - defaults write /Library/Preferences/com.apple.alf globalstate -int 1
+        - launchctl unload /System/Library/LaunchAgents/com.apple.alf.useragent.plist
+        - launchctl unload /System/Library/LaunchDaemons/com.apple.alf.agent.plist
+        - launchctl load /System/Library/LaunchDaemons/com.apple.alf.agent.plist
+        - launchctl load /System/Library/LaunchAgents/com.apple.alf.useragent.plist
 
       spotlight:
+
         # disable spotlight suggestions in spotlight and lookup
         # ????
-        # remove bing web searches
-        # ????
-        # remove bookmarks & history
-        # ????
-        # remove contacts
-        # ????
-        # remove fonts
-        # ????
-        # remove mail & messages
-        # ????
-        # remove movies
-        # ????
-        # remove music
-        # ????
+
         # Hide Spotlight tray-icon (and subsequent helper)
-        #- sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
+        #- chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
+
         # Disable Spotlight indexing for any volume that gets mounted and has not yet
         # been indexed before.
         # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
-        - sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
+        - defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
+
         # Change indexing order and disable some search results
         # Yosemite-specific search results (remove them if you are using OS X 10.9 or older):
         #   MENU_DEFINITION
@@ -216,34 +281,46 @@ osx_config_sys:
             '{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
             '{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
             '{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
+
         # Load new settings before rebuilding the index
         - killall mds > /dev/null 2>&1
+
         # Make sure indexing is enabled for the main volume
-        - sudo mdutil -i on / > /dev/null
+        - mdutil -i on / > /dev/null
+
         # Rebuild the index from scratch
-        - sudo mdutil -E / > /dev/null
+        - mdutil -E / > /dev/null
 
     line_2:
 
       energy_saver:
+
         # set display to sleep after 30 minutes
-        # ????
+        - defaults write /Library/Preferences/SystemConfiguration/com.apple.PowerManagement "Custom Profile.AC Power.Display Sleep Timer" -int 30
+
         # put hard disks to sleep when possible
-        # ????
+        - defaults write /Library/Preferences/SystemConfiguration/com.apple.PowerManagement "Custom Profile.AC Power.Disk Sleep Timer" -int 30
+
         # disable wake for network access
-        # ????
+        - defaults write /Library/Preferences/SystemConfiguration/com.apple.PowerManagement "Custom Profile.AC Power.Wake On Lan" -int 0
+
         # set computer to sleep after 3 hours
-        - sudo pmset -a standbydelay 86400
+        - pmset -a standbydelay 86400
+
         # Never go into computer sleep mode
-        #- sudo systemsetup -setcomputersleep Off > /dev/null
+        #- systemsetup -setcomputersleep Off > /dev/null
 
       keyboard:
+
         # Enable character repeat on keydown
         - defaults write -g ApplePressAndHoldEnabled -bool false
+
         # Set a shorter Delay until key repeat
         - defaults write NSGlobalDomain InitialKeyRepeat -int 12
+
         # Set a blazingly fast keyboard repeat rate
         - defaults write NSGlobalDomain KeyRepeat -int 0
+
         # Enable full keyboard access for all controls
         # (e.g. enable Tab in modal dialogs)
         - defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
@@ -251,58 +328,94 @@ osx_config_sys:
     line_3:
 
       network:
+
         # set IPv4 address (between 192.168.02 and 192.168.0.200)
         # ????
+
         # set subnet mask to 255.255.255.0
         # ????
+
         # set router to 192.168.0.1
         # ????
+
         # add DNS server 8.8.8.8 and 8.8.4.4 (google dns)
         # ????
+
         # Enable AirDrop over Ethernet and on unsupported Macs
         - defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
+
+      sharing:
+
+        # Set computer name (as done via System Preferences → Sharing)
+        #- scutil --set ComputerName "Mac Pro"
+        #- scutil --set HostName "Mac Pro"
+        #- scutil --set LocalHostName "Mac Pro"
+        #- defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Mac Pro"
 
     line_4:
 
       app_store:
+
+        - osascript -e "tell application \"System Preferences\" to quit"
+
         # Check for software updates daily, not just once per week
         - defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
         # automatically download updates in the background
-        # ????
+        - defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool TRUE
+        - defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist AutomaticDownload -bool YES
+
         # automatically install app updates
-        # ????
+        - defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist ConfigDataInstall -bool YES
+
         # disable automatically installing OS X updates
-        # ????
+        - defaults write /Library/Preferences/com.apple.commerce AutoUpdateRestartRequired -bool FALSE
+
         # install system data files and security updates
-        # ????
+        - defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist CriticalUpdateInstall -bool YES  
+
+        - osascript -e "tell application \"System Preferences\" to quit"
+
         # disable automatically downloading apps purchased on other macs
         # ????
+
         # purchases and in-app purchases require password after 15 mins
         # ????
+
         # require password for free downloads
         # ????
+
         # Enable the WebKit Developer Tools in the Mac App Store
-        #- defaults write com.apple.appstore WebKitDeveloperExtras -bool true
+        - defaults write com.apple.appstore WebKitDeveloperExtras -bool true
+
         # Enable Debug Menu in the Mac App Store
-        #- defaults write com.apple.appstore ShowDebugMenu -bool true
+        - defaults write com.apple.appstore ShowDebugMenu -bool true
 
       date_time:
+
         # show time as digital
         # ????
+
         # show time with seconds
         # ????
+
         # show time as 24 hour clock
         # ????
+
         # show day of the week
         # ????
+
         # show date
         # ????
 
       time_machine:
+
         # Prevent Time Machine from prompting to use new hard drives as backup volume
         - defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
         # Disable local Time Machine backups
         - hash tmutil &> /dev/null && sudo tmutil disablelocal
+
         # Set language and text formats
         # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
         # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
@@ -310,11 +423,15 @@ osx_config_sys:
         - defaults write NSGlobalDomain AppleLocale -string "en_GB@currency=GBP"
         - defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
         - defaults write NSGlobalDomain AppleMetricUnits -bool true
+
         # Set the timezone; see `sudo systemsetup -listtimezones` for other values
-        - sudo systemsetup -settimezone "Europe/Brussels" > /dev/null
+        - systemsetup -settimezone "Europe/London" > /dev/null
+
         # Disable auto-correct
         - defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
         # Prevent Time Machine from prompting to use new hard drives as backup volume
         - defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
         # Disable local Time Machine backups
         - hash tmutil &> /dev/null && sudo tmutil disablelocal

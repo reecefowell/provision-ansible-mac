@@ -1,5 +1,0 @@
----
-- name: Sys Config | Network
-  shell: "{{ item }}"
-  with_items: 
-   - "{{ osx_config_sys.network }}"

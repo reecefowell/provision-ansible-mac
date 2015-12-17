@@ -1,0 +1,5 @@
+---
+- name: Oh-My-Zsh | Terminal Configuration
+  shell: "{{ item }}"
+  with_items: 
+   - "{{ osx_config_app.terminal }}"

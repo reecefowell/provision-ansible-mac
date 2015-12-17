@@ -1,0 +1,84 @@
+---
+- name: Sys Config | System Preferences | General
+  shell: "{{ item }}"
+  with_items: 
+   - "{{ osx_config_sys.system_preferences.line_1.general }}"
+  sudo: true
+
+- name: Sys Config | System Preferences | Desktop & Screen Saver
+  shell: "{{ item }}"
+  with_items: 
+   - "{{ osx_config_sys.system_preferences.line_1.desktop_screen_saver }}"
+  sudo: true
+
+- name: Sys Config | System Preferences | Dock
+  shell: "{{ item }}"
+  with_items: 
+   - "{{ osx_config_sys.system_preferences.line_1.dock }}"
+  sudo: true
+
+- name: Sys Config | System Preferences | Mission Control
+  shell: "{{ item }}"
+  with_items: 
+   - "{{ osx_config_sys.system_preferences.line_1.mission_control }}"
+  sudo: true
+
+- name: Sys Config | System Preferences | Language & Region
+  shell: "{{ item }}"
+  with_items: 
+   - "{{ osx_config_sys.system_preferences.line_1.language_region }}"
+  sudo: true
+
+- name: Sys Config | System Preferences | Security & Privacy
+  shell: "{{ item }}"
+  with_items: 
+   - "{{ osx_config_sys.system_preferences.line_1.security_privacy }}"
+  sudo: true
+
+- name: Sys Config | System Preferences | Spotlight
+  shell: "{{ item }}"
+  with_items: 
+   - "{{ osx_config_sys.system_preferences.line_1.spotlight }}"
+  sudo: true
+
+- name: Sys Config | System Preferences | Energy Saver
+  shell: "{{ item }}"
+  with_items: 
+   - "{{ osx_config_sys.system_preferences.line_2.energy_saver }}"
+  sudo: true
+
+- name: Sys Config | System Preferences | Keyboard
+  shell: "{{ item }}"
+  with_items: 
+   - "{{ osx_config_sys.system_preferences.line_2.keyboard }}"
+  sudo: true
+
+- name: Sys Config | System Preferences | Network
+  shell: "{{ item }}"
+  with_items: 
+   - "{{ osx_config_sys.system_preferences.line_3.network }}"
+  sudo: true
+
+- name: Sys Config | System Preferences | Sharing
+  shell: "{{ item }}"
+  with_items: 
+   - "{{ osx_config_sys.system_preferences.line_3.sharing }}"
+  sudo: true
+
+- name: Sys Config | System Preferences | App Store
+  shell: "{{ item }}"
+  with_items: 
+   - "{{ osx_config_sys.system_preferences.line_4.app_store }}"
+  sudo: true
+
+- name: Sys Config | System Preferences | Date & Time
+  shell: "{{ item }}"
+  with_items: 
+   - "{{ osx_config_sys.system_preferences.line_4.date_time }}"
+  sudo: true
+
+- name: Sys Config | System Preferences | Time Machine
+  shell: "{{ item }}"
+  with_items: 
+   - "{{ osx_config_sys.system_preferences.line_4.time_machine }}"
+  sudo: true
