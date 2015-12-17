@@ -1,0 +1,82 @@
+---
+osx_packages:
+
+  common:
+
+    taps:
+      - homebrew/completions
+      - homebrew/dupes
+      - homebrew/nginx
+      - homebrew/php
+      - homebrew/python
+      - homebrew/science
+      - homebrew/versions
+      - osx-cross/avr
+      - nviennot/tmate
+      - phinze/cask
+
+    packages:
+      - coreutils
+      - htop-osx
+      - wget
+      - git-extras
+      - hub
+      - brew-cask
+      - geoip
+      - ruby
+      - node
+      - nginx
+      - postgresql
+      - chromedriver
+      - selenium-server-standalone
+      - rabbitmq
+      - zeromq
+
+    casks:
+      #- adium
+      - archiver
+      - appzapper
+      - caffeine
+      - ccleaner
+      - coda
+      - cyberduck
+      - deeper
+      - dropbox
+      - evernote
+      - firefox
+      #- flashplayer
+      - flip4mac
+      - forklift
+      - github-desktop
+      - google-chrome
+      - google-drive
+      - hands-off
+      - intellij-idea
+      #- ipackr # does not exists, considering contribution.
+      - maintenance
+      - mysqlworkbench
+      - onyx
+      #- patterns # does not exists, considering contribution.
+      - pg-commander
+      #- pixelmator # does not exists, considering contribution.
+      - postbox
+      - postgres
+      - secrets
+      - skype
+      - spotify
+      - sublime-text
+      - teamviewer
+      - textmate
+      - the-unarchiver
+      - transmit
+      - transmission
+      - unrarx
+      - vlc
+      - xslimmer
+      - monolingual
+      - yasu
+
+  python_packages:
+
+    requirements:
+      - pip-tools

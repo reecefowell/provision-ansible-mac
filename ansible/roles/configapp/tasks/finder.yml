@@ -1,0 +1,5 @@
+---
+- name: Sys Config | Finder
+  shell: "{{ item }}"
+  with_items: 
+   - "{{ osx_config_app.finder }}"

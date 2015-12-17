@@ -1,0 +1,27 @@
+# file: group_vars/osx.yml
+---
+system: osx
+os: osx
+
+executables:
+  brew: /usr/local/bin/brew
+  zsh: /usr/local/bin/zsh
+
+directories:
+  etc: /usr/local/etc
+  var: /usr/local/var
+
+admin:
+  user:
+    name: admin
+    group: staff
+    shell: "{{ executables.zsh }}"
+
+  template_home: home/admin
+  home: /Users/admin
+  system: osx
+  ruby:
+    version: "{{ ruby.version }}"
+  rbenv:
+    global: "{{ ruby.version }}"
+

@@ -1,0 +1,4 @@
+---
+- include: install.yml
+- include: theme.yml
+- include: awesome_terminal_fonts.yml

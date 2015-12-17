@@ -1,0 +1,14 @@
+---
+# This playbook contains common plays that will be run on all nodes.
+- name: Oh-My-Zsh | Install 
+  git: repo=git://github.com/robbyrussell/oh-my-zsh.git
+       dest=~/.oh-my-zsh
+       update=yes
+       accept_hostkey=yes
+
+- name: Oh-My-Zsh | Install  ZSH if missing
+  shell: chsh -s /bin/zsh
+  sudo: true
+
+- name: Oh-My-Zsh | Copy configuration
+  template: src=zshrc dest=~/.zshrc

@@ -1,0 +1,10 @@
+---
+# This playbook contains common plays that will be run on all nodes.
+- name: Oh-My-Zsh | Create ZSH themes directory 
+  file: path=~/.oh-my-zsh/custom/themes state=directory mode=0755
+
+- name: Oh-My-Zsh | Download PowerLevel9K ZSH theme
+  git: repo=git://github.com/bhilburn/powerlevel9k.git
+       dest=~/.oh-my-zsh/custom/themes/powerlevel9k
+       update=yes
+       accept_hostkey=yes

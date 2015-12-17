@@ -1,0 +1,22 @@
+---
+- name: Homebrew | brew update 1
+  homebrew: update_homebrew=yes
+
+- name: Homebrew | brew tap osx_packages.common.taps
+  homebrew_tap: name={{ item }} state=present
+  with_items: 
+   - "{{ osx_packages.common.taps }}"
+
+- name: Homebrew | brew update 2
+  homebrew: update_homebrew=yes upgrade_all=yes path="{{ executables.brew }}"
+
+- name: Homebrew | brew install osx_packages.common.packages
+  homebrew: name={{ item }} state=upgraded path="{{ executables.brew }}"
+  with_items:
+   - "{{ osx_packages.common.packages }}"
+
+- name: Homebrew | brew cask install osx_packages.common.casks
+  homebrew_cask: name={{ item }} state=installed
+  with_items:
+   - "{{ osx_packages.common.casks }}"
+  sudo: true

@@ -1,0 +1,4 @@
+# file: group_vars/all.yml
+---
+ruby:
+  version: 2.0.0-p451
