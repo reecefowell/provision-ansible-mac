@@ -21,7 +21,7 @@ osx_packages:
       - wget
       - git-extras
       - hub
-      - brew-cask
+      - caskroom/cask/brew-cask
       - geoip
       - ruby
       - node
