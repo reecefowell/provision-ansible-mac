@@ -11,4 +11,5 @@
   sudo: true
 
 - name: Oh-My-Zsh | Copy configuration
-  template: src=zshrc dest=~/.zshrc
+  copy: src=zshrc dest=~/.zshrc mode=0644
+  #template: src=zshrc dest=~/.zshrc

@@ -67,8 +67,8 @@ mkdir -p $SRC_DIRECTORY
 # fi
 
 # Provision the box
-ansible-playbook --ask-sudo-pass -i $ANSIBLE_DIRECTORY/inventories/osx.ini $ANSIBLE_DIRECTORY/playbook.yml --connection=local
 # ansible-playbook -i $ANSIBLE_DIRECTORY/inventories/osx.ini $ANSIBLE_DIRECTORY/playbook.yml --connection=local
+ansible-playbook --ask-sudo-pass -i $ANSIBLE_DIRECTORY/inventories/osx.ini $ANSIBLE_DIRECTORY/playbook.yml --connection=local
 
 # Link the casks.
 # ~/.bin/link-casks

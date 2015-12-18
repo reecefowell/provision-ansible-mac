@@ -3,3 +3,6 @@
 - include: theme.yml
 - include: awesome_terminal_fonts.yml
 - include: terminal.yml
+
+- shell: source ~/.zshrc
+  sudo: false
