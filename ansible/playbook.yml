@@ -2,6 +2,6 @@
   sudo: false
   roles:
    - { role: ohmyzsh }
-   # - { role: configsys }
+   - { role: configsys }
    - { role: homebrew }
-   # - { role: configapp }
+   - { role: configapp }

@@ -168,7 +168,8 @@ osx_config_sys:
         #- defaults write com.apple.dock showhidden -bool true
 
         # Reset Launchpad, but keep the desktop wallpaper intact
-        - find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
+        # seems to be broken
+        #- find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
 
       mission_control:
 
