@@ -1,8 +1,9 @@
 - hosts: all
   sudo: false
   roles:
+   - { role: git }
    - { role: ssh }
-   # - { role: ohmyzsh }
-   # - { role: configsys }
-   # - { role: homebrew }
-   # - { role: configapp }
+   - { role: ohmyzsh }
+   - { role: configsys }
+   - { role: homebrew }
+   - { role: configapp }

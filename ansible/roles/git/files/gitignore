@@ -1,0 +1,27 @@
+.idea
+.DS_Store
+.thumbs
+thumbs.db
+
+# Java crapola
+classes/
+build/
+out/
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# Java Gradle Crapola
+*.gradle
+*.iml
+
+coverage
