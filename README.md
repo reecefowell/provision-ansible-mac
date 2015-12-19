@@ -17,8 +17,7 @@ TODO:
 - fix some homebrew cask links so that binary is linked from /Applications
 - figure out how to automate terminal.app's preferences so that "source ~/.zshrc" is run on new terminal
 - still having issues with fonts for oh-my-zshell themes
-- initialize ssh-agent et al
-- setup git global defaults (i.e file new lines, global author name, github rate limit etc)
+- setup git github rate limit
 - add bower
 - add node.js
 - add gulpjs
