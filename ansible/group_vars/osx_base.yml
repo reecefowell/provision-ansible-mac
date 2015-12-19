@@ -25,3 +25,16 @@ admin:
   rbenv:
     global: "{{ ruby.version }}"
 
+machines:
+  mac_pro:
+    ssh_keys: /Volumes/Poseidon/Backup-Recovery-Provision/Machines/MacPro/SSH-Keys
+  rmbp:
+    ssh_keys: /Volumes/Poseidon/Backup-Recovery-Provision/Machines/rMbp/SSH-Keys
+  BP-Desktop:
+    ssh_keys: /Volumes/Poseidon/Backup-Recovery-Provision/Machines/BP-Desktop/SSH-Keys
+  HP-Pavillion:
+    ssh_keys: /Volumes/Poseidon/Backup-Recovery-Provision/Machines/HP-Pavillion/SSH-Keys
+  NAS-Synology-1:
+    ssh_keys: /Volumes/Poseidon/Backup-Recovery-Provision/Machines/NAS-Synology-1/SSH-Keys
+  NAS-Synology-2:
+    ssh_keys: /Volumes/Poseidon/Backup-Recovery-Provision/Machines/NAS-Synology-2/SSH-Keys
