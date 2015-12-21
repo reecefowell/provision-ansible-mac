@@ -1,0 +1,15 @@
+---
+# https://ruigomes.me/blog/perfect-iterm-osx-terminal-installation/
+- name: Oh-My-Zsh | Download PowerLine fonts
+  git: repo=git://github.com/powerline/fonts.git
+       dest=~/git-dump/powerline/fonts
+       update=yes
+       accept_hostkey=yes
+
+- name: Oh-My-Zsh | Install PowerLine fonts
+  shell: cd ~/git-dump/powerline/fonts && ./install.sh
+  sudo: false
+
+- name: Oh-My-Zsh | Reset font cache
+  shell: atsutil databases -remove
+  sudo: true

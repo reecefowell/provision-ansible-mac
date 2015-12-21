@@ -100,7 +100,4 @@ unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
-
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_MODE='awesome-patched'
-
+ZSH_THEME="agnoster"

@@ -1,5 +1,5 @@
 ---
 - name: Oh-My-Zsh | Install Awesome Terminal Fonts
-  homebrew: name={{ item }} state=upgraded path="{{ executables.brew }}"
+  homebrew: name={{ item }} state=present path="{{ executables.brew }}"
   with_items:
    - fontconfig

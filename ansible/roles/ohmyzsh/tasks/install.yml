@@ -12,4 +12,3 @@
 
 - name: Oh-My-Zsh | Copy configuration
   copy: src=zshrc dest=~/.zshrc mode=0644
-  #template: src=zshrc dest=~/.zshrc
