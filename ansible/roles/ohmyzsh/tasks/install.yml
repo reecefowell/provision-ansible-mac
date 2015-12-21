@@ -10,5 +10,8 @@
   shell: chsh -s /bin/zsh
   sudo: true
 
-- name: Oh-My-Zsh | Copy configuration
+- name: Oh-My-Zsh | Copy RC configuration
   copy: src=zshrc dest=~/.zshrc mode=0644
+
+- name: Oh-My-Zsh | Copy aliases configuration
+  copy: src=zsh-aliases dest=~/.zsh-aliases mode=0644
