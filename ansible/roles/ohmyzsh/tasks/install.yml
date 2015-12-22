@@ -11,7 +11,17 @@
   sudo: true
 
 - name: Oh-My-Zsh | Copy RC configuration
-  copy: src=zshrc dest=~/.zshrc mode=0644
+  copy: src=zshrc
+        dest=~/.zshrc
+        mode=0644
+
+- lineinfile: >
+    dest=~/.zshrc
+    regexp='^#export HOMEBREW_GITHUB_API_TOKEN='
+    insertafter='^#export HOMEBREW_GITHUB_API_TOKEN='
+    line="export HOMEBREW_GITHUB_API_TOKEN={{ lookup('file', files.github_rate_limit_token) }}"
 
 - name: Oh-My-Zsh | Copy aliases configuration
-  copy: src=zsh-aliases dest=~/.zsh-aliases mode=0644
+  copy: src=zsh-aliases
+        dest=~/.zsh-aliases
+        mode=0644

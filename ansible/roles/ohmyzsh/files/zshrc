@@ -3,6 +3,7 @@ export ZSH=$HOME/.oh-my-zsh
 export PATH="/usr/local/sbin:$PATH"
 #export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/opt/Caskroom"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+#export HOMEBREW_GITHUB_API_TOKEN=
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/

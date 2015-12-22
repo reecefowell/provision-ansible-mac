@@ -11,6 +11,9 @@ directories:
   etc: /usr/local/etc
   var: /usr/local/var
 
+files:
+  github_rate_limit_token: /Volumes/Poseidon/Backup-Recovery-Provision/Dev Configs/github-rate-limit-token
+
 admin:
   user:
     name: admin
