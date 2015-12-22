@@ -1,0 +1,20 @@
+---
+- name: Homebrew | Brew update 2
+  homebrew: >
+    update_homebrew=yes
+    upgrade_all=yes
+    path="{{ executables.brew }}"
+  sudo: false
+
+- name: Homebrew | Brew install osx_packages.common.packages
+  homebrew: >
+    name={{ item }}
+    state=present
+    path="{{ executables.brew }}"
+  with_items:
+   - "{{ osx_packages.common.packages }}"
+  sudo: false
+
+- name: Homebrew | Cleanup
+  shell: brew cleanup
+  sudo: false

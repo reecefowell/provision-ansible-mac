@@ -1,27 +1,31 @@
 ---
 # This playbook contains common plays that will be run on all nodes.
 - name: Oh-My-Zsh | Install 
-  git: repo=git://github.com/robbyrussell/oh-my-zsh.git
-       dest=~/.oh-my-zsh
-       update=yes
-       accept_hostkey=yes
+  git: >
+    repo=git://github.com/robbyrussell/oh-my-zsh.git
+    dest=~/.oh-my-zsh
+    update=yes
+    accept_hostkey=yes
 
 - name: Oh-My-Zsh | Install  ZSH if missing
   shell: chsh -s /bin/zsh
   sudo: true
 
 - name: Oh-My-Zsh | Copy RC configuration
-  copy: src=zshrc
-        dest=~/.zshrc
-        mode=0644
+  copy: >
+    src=zshrc
+    dest=~/.zshrc
+    mode=0644
 
-- lineinfile: >
+- name: Oh-My-Zsh | Add github rate limit token
+  lineinfile: >
     dest=~/.zshrc
     regexp='^#export HOMEBREW_GITHUB_API_TOKEN='
     insertafter='^#export HOMEBREW_GITHUB_API_TOKEN='
     line="export HOMEBREW_GITHUB_API_TOKEN={{ lookup('file', files.github_rate_limit_token) }}"
 
 - name: Oh-My-Zsh | Copy aliases configuration
-  copy: src=zsh-aliases
-        dest=~/.zsh-aliases
-        mode=0644
+  copy: >
+    src=zsh-aliases
+    dest=~/.zsh-aliases
+    mode=0644

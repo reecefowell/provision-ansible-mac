@@ -1,0 +1,20 @@
+---
+- name: Homebrew | Brew cask install osx_packages.common.casks
+  homebrew_cask: >
+    name={{ item }}
+    state=present
+  with_items:
+   - "{{ osx_packages.common.casks }}"
+  sudo: false
+
+- name: Homebrew | Cleanup
+  shell: brew cleanup
+  sudo: false
+
+- name: Homebrew | Cleanup
+  shell: brew cask cleanup
+  sudo: false
+
+- name: Homebrew | Ensure casks are linked to /Applications
+  shell: brew linkapps --force
+  sudo: false

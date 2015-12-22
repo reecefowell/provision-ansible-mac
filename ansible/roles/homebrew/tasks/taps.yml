@@ -1,0 +1,16 @@
+---
+- name: Homebrew | Brew update 1
+  homebrew: update_homebrew=yes
+  sudo: false
+
+- name: Homebrew | Brew tap osx_packages.common.taps
+  homebrew_tap: >
+    name={{ item }}
+    state=present
+  with_items: 
+   - "{{ osx_packages.common.taps }}"
+  sudo: false
+
+- name: Homebrew | Cleanup
+  shell: brew cleanup
+  sudo: false

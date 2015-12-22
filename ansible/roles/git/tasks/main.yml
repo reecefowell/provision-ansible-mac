@@ -1,9 +1,18 @@
 ---
 - name: Git | Copy global gitconfig
-  copy: src=gitconfig dest=~/.gitconfig mode=0644
+  copy: >
+    src=gitconfig
+    dest=~/.gitconfig
+    mode=0644
 
 - name: Git | Copy global gitignore
-  copy: src=gitignore dest=~/.gitignore mode=0644
+  copy: >
+    src=gitignore
+    dest=~/.gitignore
+    mode=0644
 
 - name: Oh-My-Zsh | Create Git Dump directory 
-  file: path=~/git-dump state=directory mode=0755
+  file: >
+    path=~/git-dump
+    state=directory
+    mode=0755

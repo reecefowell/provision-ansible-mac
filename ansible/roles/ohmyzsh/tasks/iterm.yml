@@ -1,3 +1,6 @@
 ---
 - name: Oh-My-Zsh | Copy iTerm configuration
-  copy: src=com.googlecode.iterm2.plist dest=~/Library/Preferences/com.googlecode.iterm2.plist mode=0600
+  copy: >
+    src=com.googlecode.iterm2.plist
+    dest=~/Library/Preferences/com.googlecode.iterm2.plist
+    mode=0600
