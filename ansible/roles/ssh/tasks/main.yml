@@ -13,12 +13,12 @@
 
 - name: SSH | Copy private ssh key from NAS server
   copy: >
-    src={{ machines.mac_pro.ssh_keys }}/id_rsa
+    src={{ machines.mac_pro.ssh_keys.private }}
     dest=~/.ssh/id_rsa
     mode=0600
 
 - name: SSH | Copy public ssh key from NAS server
   copy: >
-    src={{ machines.mac_pro.ssh_keys }}/id_rsa.pub
+    src={{ machines.mac_pro.ssh_keys.public }}
     dest=~/.ssh/id_rsa.pub
     mode=0644

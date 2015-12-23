@@ -30,14 +30,51 @@ admin:
 
 machines:
   mac_pro:
-    ssh_keys: /Volumes/Poseidon/Backup-Recovery-Provision/Machines/MacPro/SSH-Keys
+    ssh_keys: 
+      private: /Volumes/Poseidon/Backup-Recovery-Provision/Machines/MacPro/SSH-Keys/id_rsa
+      public:  /Volumes/Poseidon/Backup-Recovery-Provision/Machines/MacPro/SSH-Keys/id_rsa.pub
   rmbp:
-    ssh_keys: /Volumes/Poseidon/Backup-Recovery-Provision/Machines/rMbp/SSH-Keys
-  BP-Desktop:
-    ssh_keys: /Volumes/Poseidon/Backup-Recovery-Provision/Machines/BP-Desktop/SSH-Keys
-  HP-Pavillion:
-    ssh_keys: /Volumes/Poseidon/Backup-Recovery-Provision/Machines/HP-Pavillion/SSH-Keys
-  NAS-Synology-1:
-    ssh_keys: /Volumes/Poseidon/Backup-Recovery-Provision/Machines/NAS-Synology-1/SSH-Keys
-  NAS-Synology-2:
-    ssh_keys: /Volumes/Poseidon/Backup-Recovery-Provision/Machines/NAS-Synology-2/SSH-Keys
+    ssh_keys:
+      private: /Volumes/Poseidon/Backup-Recovery-Provision/Machines/rMbp/SSH-Keys/id_rsa
+      public:  /Volumes/Poseidon/Backup-Recovery-Provision/Machines/rMbp/SSH-Keys/id_rsa.pub
+  BP_Desktop:
+    ssh_keys:
+      private: /Volumes/Poseidon/Backup-Recovery-Provision/Machines/BP-Desktop/SSH-Keys/id_rsa
+      public:  /Volumes/Poseidon/Backup-Recovery-Provision/Machines/BP-Desktop/SSH-Keys/id_rsa.pub
+  HP_Pavillion:
+    ssh_keys:
+      private: /Volumes/Poseidon/Backup-Recovery-Provision/Machines/HP-Pavillion/SSH-Keys/id_rsa
+      public:  /Volumes/Poseidon/Backup-Recovery-Provision/Machines/HP-Pavillion/SSH-Keys/id_rsa.pub
+  NAS_Synology_1:
+    ssh_keys:
+      private: /Volumes/Poseidon/Backup-Recovery-Provision/Machines/NAS-Synology-1/SSH-Keys/id_rsa
+      public:  /Volumes/Poseidon/Backup-Recovery-Provision/Machines/NAS-Synology-1/SSH-Keys/id_rsa.pub
+  NAS_Synology_2:
+    ssh_keys:
+      private: /Volumes/Poseidon/Backup-Recovery-Provision/Machines/NAS-Synology-2/SSH-Keys/id_rsa
+      public:  /Volumes/Poseidon/Backup-Recovery-Provision/Machines/NAS-Synology-2/SSH-Keys/id_rsa.pub
+
+package:
+  oh_my_zsh:
+    origin:
+      src:  git://github.com/robbyrussell/oh-my-zsh.git
+      dest: ~/.oh-my-zsh
+  powerlevel9k:
+    origin:
+      src:  git://github.com/bhilburn/powerlevel9k.git
+      dest: ~/.oh-my-zsh/custom/themes/powerlevel9k
+    config:
+      themes_dir: ~/.oh-my-zsh/custom/themes
+  powerline:
+    origin:
+      src:  git://github.com/powerline/fonts.git
+      dest: ~/git-dump/powerline/fonts
+  iterm:
+    plist:
+      src:  com.googlecode.iterm2.plist
+      dest: ~/Library/Preferences/com.googlecode.iterm2.plist
+
+
+
+
+

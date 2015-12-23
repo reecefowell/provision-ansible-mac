@@ -1,6 +1,6 @@
 ---
 - name: Oh-My-Zsh | Copy iTerm configuration
   copy: >
-    src=com.googlecode.iterm2.plist
-    dest=~/Library/Preferences/com.googlecode.iterm2.plist
+    src={{ package.iterm.plist.src }}
+    dest={{ package.iterm.plist.dest }}
     mode=0600

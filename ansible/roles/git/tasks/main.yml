@@ -11,7 +11,7 @@
     dest=~/.gitignore
     mode=0644
 
-- name: Oh-My-Zsh | Create Git Dump directory 
+- name: Git | Create Git Dump directory 
   file: >
     path=~/git-dump
     state=directory

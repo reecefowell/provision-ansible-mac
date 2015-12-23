@@ -2,12 +2,12 @@
 # This playbook contains common plays that will be run on all nodes.
 - name: Oh-My-Zsh | Install 
   git: >
-    repo=git://github.com/robbyrussell/oh-my-zsh.git
-    dest=~/.oh-my-zsh
+    repo={{ package.oh_my_zsh.origin.dest }}
+    dest={{ package.oh_my_zsh.origin.dest }}
     update=yes
     accept_hostkey=yes
 
-- name: Oh-My-Zsh | Install  ZSH if missing
+- name: Oh-My-Zsh | Install ZSH if missing
   shell: chsh -s /bin/zsh
   sudo: true
 
