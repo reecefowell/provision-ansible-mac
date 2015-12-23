@@ -7,3 +7,4 @@
    - { role: configsys }
    - { role: homebrew }
    - { role: configapp }
+   - { role: nodejs }

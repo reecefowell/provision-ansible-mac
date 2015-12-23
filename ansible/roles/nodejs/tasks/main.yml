@@ -1,0 +1,14 @@
+---
+- name: Node | Install Node
+  homebrew: >
+    name=node
+    state=present
+    path="{{ executables.brew }}"
+  sudo: false
+
+- name: Node | Install NPM
+  homebrew: >
+    name=npm
+    state=present
+    path="{{ executables.brew }}"
+  sudo: false

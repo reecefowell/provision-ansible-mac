@@ -10,9 +10,10 @@ Usage:
 - Configures apps via Apples Defaults command.
 - Configures OS X via Apples Defaults command (including Preferences panes).
 - Adds Oh-my-Zsh for ZShell.
+- Adds forked and customized Agnoster theme for Oh-my-Zsh.
 - Adds and sets up Git, including global .gitignore and global .gitconfig etc.
-- Fetches SSH keys from remote LAN NAS server and configures SSH
-- 
+- Fetches SSH keys from remote LAN NAS server and configures SSH.
+- Installs Java via Brew.
 
 Inspired by:
 
@@ -25,8 +26,5 @@ https://github.com/caskroom/homebrew-cask/blob/master/USAGE.md
 
 TODO:
 
-- add bower
-- add node.js
 - add gulpjs
-- add java/jvm etc
-- add timestamp to zsh theme
+- add bower
