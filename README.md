@@ -21,11 +21,12 @@ https://gist.github.com/saetia/1623487
 https://raw.githubusercontent.com/mathiasbynens/dotfiles/master/.osx
 https://github.com/diimdeep/dotfiles/tree/master/osx/configure/el_capitan
 https://github.com/rodionovd/dotfiles/blob/master/osx.sh
+https://github.com/caskroom/homebrew-cask/blob/master/USAGE.md
 
 TODO:
 
-- setup git github rate limit
 - add bower
 - add node.js
 - add gulpjs
 - add java/jvm etc
+- add timestamp to zsh theme

@@ -54,6 +54,7 @@ osx_packages:
       - intellij-idea
       #- ipackr # does not exists, considering contribution.
       - iterm2
+      - java
       - maintenance
       - mysqlworkbench
       - onyx
