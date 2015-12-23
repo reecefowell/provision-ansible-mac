@@ -1,8 +1,12 @@
 Usage:
+------
 
 ```
 ./bootstrap.sh
 ```
+
+What it does:
+-------------
 
 - Installs Git.
 - Adds OS X packages via Homebrew.
@@ -16,6 +20,7 @@ Usage:
 - Installs Java via Brew.
 
 Inspired by:
+------------
 
 http://il.luminat.us/blog/2014/04/19/how-i-fully-automated-os-x-with-ansible/
 https://gist.github.com/saetia/1623487
@@ -25,6 +30,6 @@ https://github.com/rodionovd/dotfiles/blob/master/osx.sh
 https://github.com/caskroom/homebrew-cask/blob/master/USAGE.md
 
 TODO:
+-----
 
 - add gulpjs
-- add bower
