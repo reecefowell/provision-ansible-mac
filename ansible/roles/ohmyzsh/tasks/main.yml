@@ -1,7 +1,8 @@
 ---
 - include: install.yml
-- include: theme.yml
 - include: powerline_fonts.yml
+- include: theme.yml
+- include: plugins.yml
 - include: terminal.yml
 - include: iterm.yml
 
