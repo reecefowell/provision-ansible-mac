@@ -12,3 +12,10 @@
     dest={{ package.powerlevel9k.origin.dest }}
     update=yes
     accept_hostkey=yes
+
+- name: Oh-My-Zsh | Download Agnoster ZSH theme (my fork)
+  git: >
+    repo={{ package.agnoster.origin.src }}
+    dest={{ package.agnoster.origin.dest }}
+    update=yes
+    accept_hostkey=yes

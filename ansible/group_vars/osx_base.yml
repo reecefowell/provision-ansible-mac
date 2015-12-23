@@ -59,6 +59,11 @@ package:
     origin:
       src:  git://github.com/robbyrussell/oh-my-zsh.git
       dest: ~/.oh-my-zsh
+  agnoster:
+    origin:
+      src:  git://github.com/reecefowell/agnoster-zsh-theme.git
+      dest: ~/.oh-my-zsh/custom/themes/agnoster
+    original_path: ~/.oh-my-zsh/themes/agnoster.zsh-theme
   powerlevel9k:
     origin:
       src:  git://github.com/bhilburn/powerlevel9k.git

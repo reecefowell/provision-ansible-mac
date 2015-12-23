@@ -2,7 +2,7 @@
 # This playbook contains common plays that will be run on all nodes.
 - name: Oh-My-Zsh | Install 
   git: >
-    repo={{ package.oh_my_zsh.origin.dest }}
+    repo={{ package.oh_my_zsh.origin.src }}
     dest={{ package.oh_my_zsh.origin.dest }}
     update=yes
     accept_hostkey=yes
