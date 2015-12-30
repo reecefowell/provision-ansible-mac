@@ -32,4 +32,5 @@ https://github.com/caskroom/homebrew-cask/blob/master/USAGE.md
 TODO:
 -----
 
-- add gulpjs
+- add/configure postgres
+- add/configure nginx

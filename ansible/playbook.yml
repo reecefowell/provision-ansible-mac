@@ -9,3 +9,4 @@
    - { role: configapp }
    - { role: nodejs }
    - { role: bower }
+   - { role: gulpjs }

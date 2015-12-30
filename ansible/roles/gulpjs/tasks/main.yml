@@ -1,0 +1,7 @@
+---
+- name: GulpJS | Install GulpJS
+  npm: >
+    name=gulp
+    global=yes
+    state=present
+  sudo: true
