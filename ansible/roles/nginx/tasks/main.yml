@@ -1,0 +1,7 @@
+---
+- name: NGinx | Install NGinx
+  homebrew: >
+    name=nginx
+    state=present
+    path="{{ executables.brew }}"
+  sudo: false

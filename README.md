@@ -22,8 +22,8 @@ What it does:
 Inspired by:
 ------------
 
-http://il.luminat.us/blog/2014/04/19/how-i-fully-automated-os-x-with-ansible/
 https://gist.github.com/saetia/1623487
+http://il.luminat.us/blog/2014/04/19/how-i-fully-automated-os-x-with-ansible/
 https://raw.githubusercontent.com/mathiasbynens/dotfiles/master/.osx
 https://github.com/diimdeep/dotfiles/tree/master/osx/configure/el_capitan
 https://github.com/rodionovd/dotfiles/blob/master/osx.sh

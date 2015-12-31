@@ -10,3 +10,4 @@
    - { role: nodejs }
    - { role: bower }
    - { role: gulpjs }
+   - { role: nginx }
