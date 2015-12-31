@@ -24,7 +24,6 @@ osx_packages:
       - caskroom/cask/brew-cask
       - geoip
       - ruby
-      - postgresql
       - chromedriver
       - selenium-server-standalone
       - rabbitmq

@@ -1,0 +1,7 @@
+---
+- name: PostGres | Install PostGres
+  homebrew: >
+    name=postgresql
+    state=present
+    path="{{ executables.brew }}"
+  sudo: false

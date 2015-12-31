@@ -32,5 +32,4 @@ https://github.com/caskroom/homebrew-cask/blob/master/USAGE.md
 TODO:
 -----
 
-- add/configure postgres
-- add/configure nginx
+- configure postgres

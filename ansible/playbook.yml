@@ -11,3 +11,4 @@
    - { role: bower }
    - { role: gulpjs }
    - { role: nginx }
+   - { role: postgres }
