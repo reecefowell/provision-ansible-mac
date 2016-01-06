@@ -1,6 +1,8 @@
+---
 - hosts: all
   sudo: false
   roles:
+   - { role: preamble }
    - { role: git }
    - { role: ssh }
    - { role: ohmyzsh }

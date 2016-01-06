@@ -1,0 +1,11 @@
+---
+- name: SSH | Download all public keys from Github
+  get_url:
+    url=https://github.com/reecefowell.keys
+    dest=/tmp/authorized_keys
+  delegate_to: 127.0.0.1
+
+- name: SSH | Create authorized_keys file from downloaded keys
+  authorized_key:
+    user={{ username_on_the_host.stdout }}
+    key="{{ lookup('file', '/tmp/authorized_keys') }}"

@@ -22,3 +22,5 @@
     src={{ machines.mac_pro.ssh_keys.public }}
     dest=~/.ssh/id_rsa.pub
     mode=0644
+
+- include: authorized_keys.yml
