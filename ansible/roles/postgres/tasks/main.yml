@@ -5,3 +5,4 @@
     state=present
     path="{{ executables.brew }}"
   sudo: false
+  notify: Restart PostgreSQL
