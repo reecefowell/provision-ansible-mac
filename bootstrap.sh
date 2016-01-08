@@ -52,6 +52,10 @@ fi
 # Make the code directory
 mkdir -p $SRC_DIRECTORY
 
+# FIX ANSIBLE PERMISSIONS
+chmod -R 750 $SRC_DIRECTORY
+chmod -R 660 $ANSIBLE_DIRECTORY/inventories/*
+
 # # Clone down ansible
 # if [[ ! -d $ANSIBLE_DIRECTORY ]]; then
 #     git clone -b devel git://github.com/danieljaouen/ansible.git $ANSIBLE_DIRECTORY
