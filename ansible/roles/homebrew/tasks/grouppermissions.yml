@@ -1,0 +1,19 @@
+---
+# http://blog.strug.de/2012/06/my-homebrew-multi-user-setup/
+- name: Homebrew | Create brew group
+  group:
+    name: brew
+    state: present
+    system: no
+
+- name: Homebrew | Use group permissions for homebrew /usr/local
+  file: >
+    path=/usr/local
+    group=brew
+    mode="g+w"
+
+- name: Homebrew | Use group permissions for homebrew /Library/Caches/Homebrew
+  file: >
+    path=/Library/Caches/Homebrew
+    group=brew
+    mode="g+w"

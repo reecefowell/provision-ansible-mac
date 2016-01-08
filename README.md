@@ -1,6 +1,9 @@
 Usage:
 ------
 
+1) Create group 'brew' via system preferences
+2) Add users to group 'brew' via system preferences
+
 ```
 ./bootstrap.sh
 ```

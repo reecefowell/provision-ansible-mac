@@ -7,7 +7,7 @@
     update=yes
     accept_hostkey=yes
 
-- name: Oh-My-Zsh | Install ZSH if missing
+- name: Oh-My-Zsh | Switch to ZSH
   shell: chsh -s /bin/zsh
   sudo: true
 

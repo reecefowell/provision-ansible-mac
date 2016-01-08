@@ -1,4 +1,5 @@
 ---
+- include: grouppermissions.yml
 - include: taps.yml
 - include: brews.yml
 - include: casks.yml
