@@ -17,3 +17,15 @@
     path=/Library/Caches/Homebrew
     group=brew
     mode="g+w"
+
+- name: Homebrew | Use group permissions for homebrew /opt/homebrew-cask/Caskroom
+  file: >
+    path=/opt/homebrew-cask/Caskroom
+    owner=root
+    group=admin
+    mode="g+w"
+    recurse=yes
+  sudo: true
+
+# sudo chown -R root:admin /opt/homebrew-cask/Caskroom/yasu
+# sudo chmod -R g+w /opt/homebrew-cask/Caskroom/yasu

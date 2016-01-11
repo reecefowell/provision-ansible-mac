@@ -13,7 +13,6 @@ osx_packages:
       - homebrew/versions
       - osx-cross/avr
       - nviennot/tmate
-      - phinze/cask
 
     packages:
       - coreutils

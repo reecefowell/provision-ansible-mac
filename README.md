@@ -32,6 +32,12 @@ https://github.com/diimdeep/dotfiles/tree/master/osx/configure/el_capitan
 https://github.com/rodionovd/dotfiles/blob/master/osx.sh
 https://github.com/caskroom/homebrew-cask/blob/master/USAGE.md
 
+Notes on Brew Cask:
+-------------------
+
+Brews are located in /usr/local/opt/
+Casks are located in /opt/homebrew-cask/Caskroom/
+
 TODO:
 -----
 
