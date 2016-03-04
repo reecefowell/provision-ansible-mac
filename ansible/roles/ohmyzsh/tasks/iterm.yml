@@ -4,3 +4,29 @@
     src={{ package.iterm.plist.src }}
     dest={{ package.iterm.plist.dest }}
     mode=0600
+
+- name: Oh-My-Zsh | Create ZSH themes directory 
+  file: >
+    path=/usr/local/share/zsh/
+    state=directory
+    recurse=yes
+    mode=0755
+  sudo: true
+
+- name: Oh-My-Zsh | Switch to ZSH
+  file: >
+    path=/usr/local/share/zsh/
+    state=directory
+    recurse=yes
+    owner=reecefowell
+    group=admin
+  sudo: true
+
+- name: Oh-My-Zsh | Switch to ZSH
+  file: >
+    state=directory
+    recurse=yes
+    path=/usr/local/share/zsh/site-functions
+    owner=root
+    group=admin
+  sudo: true

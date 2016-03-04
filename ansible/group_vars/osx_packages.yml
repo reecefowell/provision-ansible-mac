@@ -27,6 +27,7 @@ osx_packages:
       - selenium-server-standalone
       - rabbitmq
       - zeromq
+      - maven
 
     casks:
       #- adium # don't even use it anymore
